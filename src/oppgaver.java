@@ -26,4 +26,19 @@ public class oppgaver {
         }
         System.out.println(sum);
     }
+
+    public static void oppgave3() { // largest prime factor of 600851475143
+        double tall = 600_851_475_143D; // too large for int, we have to write 'D' for double even if datatype is double or Java will treat it as int even if we specified double
+        double floor_function = Math.floor(Math.sqrt(tall));
+        double svar = floor_function;
+        boolean ferdig = false;
+        while (ferdig != true) {
+            int i = 2;
+            if (svar % i == 0) {
+                svar = svar / i;
+                i++;
+                System.out.println(svar);
+            }
+        }
+    }
 }
