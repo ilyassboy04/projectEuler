@@ -45,4 +45,8 @@ public class oppgaver {
         }
         System.out.println(stoerstePrimtall);
     }
+
+    public static void oppgave4() { // Largest palindrome product of the product of two 3-digit numbers YYY * YYY =
+        // answer will be between 10k - 1mil bc the smallest product of YYY * YYY is 10k and largest is slightly under 1mil
+    }
 }
