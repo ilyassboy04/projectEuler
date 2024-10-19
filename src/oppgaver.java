@@ -46,7 +46,31 @@ public class oppgaver {
         System.out.println(stoerstePrimtall);
     }
 
-    public static void oppgave4() { // Largest palindrome product of the product of two 3-digit numbers YYY * YYY =
-        // answer will be between 10k - 1mil bc the smallest product of YYY * YYY is 10k and largest is slightly under 1mil
+    public static boolean isPalindrome(int num) {
+        int originalNum = num;
+        int reversedNum = 0;
+
+        while (num > 0) {
+            int lastDigit = num % 10;
+            reversedNum = reversedNum * 10 + lastDigit;
+            num /= 10;
+        }
+
+        return originalNum == reversedNum;
+    }
+
+    public static int oppgave4() {
+        int largestPalindrome = 0;
+
+        for (int i = 999; i >= 100; i--) {
+            for (int j = i; j >= 100; j--) {
+                int product = i * j;
+                if (isPalindrome(product) && product > largestPalindrome) {
+                    largestPalindrome = product;
+                }
+            }
+        }
+        System.out.println(largestPalindrome);
+        return largestPalindrome;
     }
 }
