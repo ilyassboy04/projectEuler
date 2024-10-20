@@ -90,4 +90,18 @@ public class oppgaver {
             System.out.println(number);
         }
     }
+
+    public static void oppgave6() { // sum square difference (1+2...100)^2 vs (1^2 + ... 100^2)
+        double number1 = 0;
+        double number2 = 0;
+        double svar = 0;
+        int n = 2;
+        for (int i = 1; i <=100; i++){
+            number1 += Math.pow(i,n);
+            number2 += i;
+        }
+        number2 = Math.pow(number2,n);
+        svar = number2-number1;
+        System.out.println(svar/1_000_000);
+    }
 }
