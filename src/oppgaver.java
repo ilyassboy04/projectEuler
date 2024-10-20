@@ -73,4 +73,12 @@ public class oppgaver {
         System.out.println(largestPalindrome);
         return largestPalindrome;
     }
+
+    public static void oppgave5() { //Smallest multible evenly divisble by 1-20
+        //thoughts, need to have a own if cond. for the primes
+        int tmp = 0;
+        while 
+
+
+    }
 }
