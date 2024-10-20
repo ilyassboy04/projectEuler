@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class oppgaver {
 
     public static void oppgave1 (){ //sum of multiples of 3 & 5 under 1000
@@ -104,4 +107,18 @@ public class oppgaver {
         svar = number2-number1;
         System.out.println(svar/1_000_000);
     }
+
+    public static void oppgave7() { //the 10_001th prime number
+        int[] tall = new int[10_001];
+        int indeks = 0;
+        tall[0] = 2;
+        tall[1] = 3;
+        for (int prime= 4; indeks < 10_001; prime++)
+            if (prime%tall[indeks]!=0){
+                tall[indeks] = prime;
+                indeks ++;
+            }
+        System.out.println(tall[tall.length]-1);
+    }
+
 }
