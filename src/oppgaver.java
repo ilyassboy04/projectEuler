@@ -46,7 +46,21 @@ public class oppgaver {
         System.out.println(stoerstePrimtall);
     }
 
-    public static boolean isPalindrome(int num) {
+    public static int oppgave4() {
+        int largestPalindrome = 0;
+
+        for (int i = 999; i >= 100; i--) {
+            for (int j = i; j >= 100; j--) {
+                int product = i * j;
+                if (palindromeCheck(product) && product > largestPalindrome) {
+                    largestPalindrome = product;
+                }
+            }
+        }
+        System.out.println(largestPalindrome);
+        return largestPalindrome;
+    }
+    public static boolean palindromeCheck(int num) {
         int originalNum = num;
         int reversedNum = 0;
 
@@ -59,26 +73,21 @@ public class oppgaver {
         return originalNum == reversedNum;
     }
 
-    public static int oppgave4() {
-        int largestPalindrome = 0;
-
-        for (int i = 999; i >= 100; i--) {
-            for (int j = i; j >= 100; j--) {
-                int product = i * j;
-                if (isPalindrome(product) && product > largestPalindrome) {
-                    largestPalindrome = product;
+    public static void oppgave5() { //Smallest multible evenly divisble by 1-20
+        int number = 1;
+        int i = 2;
+        boolean solution = false;
+        while (!solution) {
+            for (i = 2; i <= 20; i++) {
+                for (int j = 2; j <= 20; j++) {
+                    if (number % j != 0) {
+                        number++;
+                    } else {
+                        solution = true;
+                    }
                 }
             }
+            System.out.println(number);
         }
-        System.out.println(largestPalindrome);
-        return largestPalindrome;
-    }
-
-    public static void oppgave5() { //Smallest multible evenly divisble by 1-20
-        //thoughts, need to have a own if cond. for the primes
-        int tmp = 0;
-        while 
-
-
     }
 }
