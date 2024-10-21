@@ -3,27 +3,27 @@ import java.util.List;
 
 public class oppgaver {
 
-    public static void oppgave1 (){ //sum of multiples of 3 & 5 under 1000
+    public static void oppgave1() { //sum of multiples of 3 & 5 under 1000
         int sum = 0;
-        for (int i = 0; i < 1_000; i++){
-            if (i%3==0 || i%5==0){
+        for (int i = 0; i < 1_000; i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
                 sum += i;
             }
         }
         System.out.println(sum);
     }
 
-    public static void oppgave2(){ //sum of even numbers in fib under 4*10^6
+    public static void oppgave2() { //sum of even numbers in fib under 4*10^6
         int n1 = 1;
-        int n2= 2;
+        int n2 = 2;
         int n3 = 0;
         int sum = 2;
-        while (sum < 4_000_000){
+        while (sum < 4_000_000) {
             n3 = n1 + n2;
             n1 = n2;
             n2 = n3;
             System.out.println(n3);
-            if(n3%2==0) {
+            if (n3 % 2 == 0) {
                 sum += n3;
             }
         }
@@ -34,16 +34,16 @@ public class oppgaver {
         double tall = 600_851_475_143D;// too large for int, we have to write 'D' for double even if datatype is double or Java will treat it as int even if we specified double
         double stoerstePrimtall = 0;
         int n = 2;
-        while (n*n <= tall){
-            if (tall%n == 0){
-                tall/=n;
+        while (n * n <= tall) {
+            if (tall % n == 0) {
+                tall /= n;
                 stoerstePrimtall = tall;
                 System.out.println(n);
             } else {
                 n++;
             }
         }
-        if (tall > 1){
+        if (tall > 1) {
             stoerstePrimtall = tall;
         }
         System.out.println(stoerstePrimtall);
@@ -63,6 +63,7 @@ public class oppgaver {
         System.out.println(largestPalindrome);
         return largestPalindrome;
     }
+
     public static boolean palindromeCheck(int num) {
         int originalNum = num;
         int reversedNum = 0;
@@ -99,13 +100,13 @@ public class oppgaver {
         double number2 = 0;
         double svar = 0;
         int n = 2;
-        for (int i = 1; i <=100; i++){
-            number1 += Math.pow(i,n);
+        for (int i = 1; i <= 100; i++) {
+            number1 += Math.pow(i, n);
             number2 += i;
         }
-        number2 = Math.pow(number2,n);
-        svar = number2-number1;
-        System.out.println(svar/1_000_000);
+        number2 = Math.pow(number2, n);
+        svar = number2 - number1;
+        System.out.println(svar / 1_000_000);
     }
 
     public static void oppgave7() { //the 10_001th prime number
@@ -113,12 +114,31 @@ public class oppgaver {
         int indeks = 0;
         tall[0] = 2;
         tall[1] = 3;
-        for (int prime= 4; indeks < 10_001; prime++)
-            if (prime%tall[indeks]!=0){
+        for (int prime = 4; indeks < 10_001; prime++)
+            if (prime % tall[indeks] != 0) {
                 tall[indeks] = prime;
-                indeks ++;
+                indeks++;
             }
-        System.out.println(tall[tall.length]-1);
+        System.out.println(tall[tall.length] - 1);
     }
 
+    public static void oppgave8() {
+
+    }
+
+    public static void oppgave9() { //Pythagorean triplet, find abc for a + b + c = 1_000 & a<b<c where a^2 + b^2 = c^2
+        int limit = 1_000;
+        for (int a = 1; a < limit; a++){
+            for (int b = a + 1; b < limit; b++){
+                int c = limit - b - a; // a + b + c = limit (1000)
+                if (c > 0 &&  (a*a + b*b == c*c)){
+                    System.out.println(a + " " + b + " " + c);
+                    System.out.println(a*b*c);
+                    return; //stops after first triplet, not needed in this code bc we know that there's only one
+                }
+            }
+        }
+
+    }
 }
+
