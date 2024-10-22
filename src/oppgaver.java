@@ -138,7 +138,13 @@ public class oppgaver {
                 }
             }
         }
-
     }
+
+    public static void oppgave10(){ //summation of primes below two million
+    }
+
+    public static void oppgave11(){ //Largest product in a grid
+    }
+
 }
 
