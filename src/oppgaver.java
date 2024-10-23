@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class oppgaver {
 
@@ -144,7 +145,29 @@ public class oppgaver {
     }
 
     public static void oppgave11(){ //Largest product in a grid
+        Scanner scanner = new Scanner(System.in);
+        int [][] grid = new int[20][20];
+
+        System.out.println("enter grid form PE");
+        for (int i = 0; i <20; i++){
+            String row = scanner.nextLine(); // reads an entire row,
+            String[] numbers = row.split(" "); // splits the row into numbers
+            for (int j = 0; j < numbers.length; j++){
+                grid[i][j] = Integer.parseInt(numbers[j]);
+            }
+        }
+        int biggestProduct = 0;
+        int newProduct = 0;
+        for (int i = 0; i < grid.length; i++){
+            for (int j = 0; i < grid[i].length-3; j++){
+                newProduct = grid[i][j] * grid[i+1][j] * grid[i+2][j] * grid[i+3][j]; //this shall give the largest product horisontally ont the first row of the grid (only a test)
+                if (newProduct > biggestProduct){ // problem: will only do right-left, some values will be missing with left-right diagonals.
+                    biggestProduct = newProduct;
+                } //TODO: out of bounds for j -> if statements maybe? + reverse method for right-left diagonals?
+            }
+        }
     }
+
 
 }
 
