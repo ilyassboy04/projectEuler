@@ -129,47 +129,79 @@ public class oppgaver {
 
     public static void oppgave9() { //Pythagorean triplet, find abc for a + b + c = 1_000 & a<b<c where a^2 + b^2 = c^2
         int limit = 1_000;
-        for (int a = 1; a < limit; a++){
-            for (int b = a + 1; b < limit; b++){
+        for (int a = 1; a < limit; a++) {
+            for (int b = a + 1; b < limit; b++) {
                 int c = limit - b - a; // a + b + c = limit (1000)
-                if (c > 0 &&  (a*a + b*b == c*c)){
+                if (c > 0 && (a * a + b * b == c * c)) {
                     System.out.println(a + " " + b + " " + c);
-                    System.out.println(a*b*c);
+                    System.out.println(a * b * c);
                     return; //stops after first triplet, not needed in this code bc we know that there's only one
                 }
             }
         }
     }
 
-    public static void oppgave10(){ //summation of primes below two million
+    public static void oppgave10() { //summation of primes below two million
     }
 
-    public static void oppgave11(){ //Largest product in a grid
+    public static void oppgave11() { //Largest product in a grid
         Scanner scanner = new Scanner(System.in);
-        int [][] grid = new int[20][20];
+        int[][] grid = new int[20][20];
 
         System.out.println("enter grid form PE");
-        for (int i = 0; i <20; i++){
+        for (int i = 0; i < 20; i++) {
             String row = scanner.nextLine(); // reads an entire row,
             String[] numbers = row.split(" "); // splits the row into numbers
-            for (int j = 0; j < numbers.length; j++){
+            for (int j = 0; j < numbers.length; j++) {
                 grid[i][j] = Integer.parseInt(numbers[j]);
             }
         }
         int biggestVerticalProduct = 0;
         int newProduct = 0;
-        for (int i = 0; i < grid.length-3; i++){
-            for (int j = 0; j < grid[i].length-3; j++){
-                newProduct = grid[i][j] * grid[i+1][j] * grid[i+2][j] * grid[i+3][j]; //this shall give the largest product vertically ont the first row of the grid (only a test)
-                if (newProduct > biggestVerticalProduct){ // problem: will only do right-left, some values will be missing with left-right diagonals.
-                    System.out.println(grid[i][j] + " " + grid[i+1][j] + " " + grid[i+2][j] + " " + grid[i+3][j]);
+        for (int i = 0; i < grid.length - 3; i++) {
+            for (int j = 0; j < grid[i].length - 1; j++) {
+                newProduct = grid[i][j] * grid[i + 1][j] * grid[i + 2][j] * grid[i + 3][j]; //this shall give the largest product vertically ont the first row of the grid (only a test)
+                if (newProduct > biggestVerticalProduct) { // problem: will only do right-left, some values will be missing with left-right diagonals.
                     biggestVerticalProduct = newProduct;
-                } 
+                }
+            }
+        }
+        int biggestHorisontalProduct = 0;
+        for (int i = 0; i < grid.length - 1; i++) {
+            for (int j = 0; j < grid[i].length - 3; j++) {
+                newProduct = grid[i][j] * grid[i][j + 1] * grid[i][j + 2] * grid[i][j + 3];
+                if (newProduct > biggestHorisontalProduct) {
+                    biggestHorisontalProduct = newProduct;
+                }
             }
         }
 
+        int biggestLeft_Right_Down_Diagonal = 0;
+        for (int i = 0; i < grid.length-3; i++){
+            for (int j = 0; j < grid[i].length -3; j++){
+                newProduct = grid[i][j] * grid[i+1][j+1] * grid[i+2][j+2] * grid[i+3][j+3];
+                if (newProduct > biggestLeft_Right_Down_Diagonal){
+                    biggestLeft_Right_Down_Diagonal = newProduct;
+                }
+            }
+        }
+        int biggestRight_Left_Down_Diagonal = 0;
+        for (int i = 0; i < grid.length-3; i++){
+            for (int j = 0; j < grid[i].length-3; j++){
+                newProduct = grid[i+3][j] * grid[i+2][j+1] * grid[i+1][j+2] * grid[i][j+3];
+                if(newProduct > biggestRight_Left_Down_Diagonal){
+                    biggestRight_Left_Down_Diagonal = newProduct;
+                }
+            }
+        }
+        System.out.println("Biggest vertical: " + biggestVerticalProduct);
+        System.out.println("Biggest Horisontal: " + biggestHorisontalProduct);
+        System.out.println("Biggest RLD-diagonal: " + biggestRight_Left_Down_Diagonal);
+        System.out.println("Biggest LFD-diagonal: " + biggestLeft_Right_Down_Diagonal);
+        
     }
-
-
 }
+
+
+
 
