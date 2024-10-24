@@ -10,6 +10,6 @@ public class Main {
         //TODO:  oppgaver.oppgave8();
         //PASSED oppgaver.oppgave9();
         //TODO:  oppgaver.oppgave10();
-          oppgaver.oppgave11();
+        //PASSED oppgaver.oppgave11();
     }
 }
