@@ -156,16 +156,18 @@ public class oppgaver {
                 grid[i][j] = Integer.parseInt(numbers[j]);
             }
         }
-        int biggestProduct = 0;
+        int biggestVerticalProduct = 0;
         int newProduct = 0;
-        for (int i = 0; i < grid.length; i++){
-            for (int j = 0; i < grid[i].length-3; j++){
-                newProduct = grid[i][j] * grid[i+1][j] * grid[i+2][j] * grid[i+3][j]; //this shall give the largest product horisontally ont the first row of the grid (only a test)
-                if (newProduct > biggestProduct){ // problem: will only do right-left, some values will be missing with left-right diagonals.
-                    biggestProduct = newProduct;
-                } //TODO: out of bounds for j -> if statements maybe? + reverse method for right-left diagonals?
+        for (int i = 0; i < grid.length-3; i++){
+            for (int j = 0; j < grid[i].length-3; j++){
+                newProduct = grid[i][j] * grid[i+1][j] * grid[i+2][j] * grid[i+3][j]; //this shall give the largest product vertically ont the first row of the grid (only a test)
+                if (newProduct > biggestVerticalProduct){ // problem: will only do right-left, some values will be missing with left-right diagonals.
+                    System.out.println(grid[i][j] + " " + grid[i+1][j] + " " + grid[i+2][j] + " " + grid[i+3][j]);
+                    biggestVerticalProduct = newProduct;
+                } 
             }
         }
+
     }
 
 
