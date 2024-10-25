@@ -123,7 +123,30 @@ public class oppgaver {
         System.out.println(tall[tall.length] - 1);
     }
 
-    public static void oppgave8() {
+    public static void oppgave8() { // largest product in a series
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give me the big number");
+        StringBuilder numberSeriesBuilder = new StringBuilder();
+        String line;
+        while (!(line = scanner.nextLine()).equals("END")){ // have to manually end it
+            numberSeriesBuilder.append(line);
+        }
+        scanner.close();
+
+        String numberSeries = numberSeriesBuilder.toString(); // converts to string
+        long maxProduct = 0;
+
+        for(int i = 0; i <= numberSeries.length()-13; i++){
+            long product = 1;
+            for (int j = 0; j<13; j++){
+                int digit = Character.getNumericValue(numberSeries.charAt(i + j));
+                product *= digit;
+            }
+            if (product > maxProduct){
+                maxProduct = product;
+            }
+        }
+        System.out.println(maxProduct);
 
     }
 
@@ -198,7 +221,21 @@ public class oppgaver {
         System.out.println("Biggest Horisontal: " + biggestHorisontalProduct);
         System.out.println("Biggest RLD-diagonal: " + biggestRight_Left_Down_Diagonal);
         System.out.println("Biggest LFD-diagonal: " + biggestLeft_Right_Down_Diagonal);
-        
+    }
+
+    public static void oppgave14(){ //Longest Collatz sequence (3n+1)
+        int start = 13;
+        int length = 1;
+        while (start!= 1){
+            if(start%2==0){
+                start/=2;
+            } else{
+                start = 3*start+1;
+            }
+            System.out.println(start);
+            length++;
+        }
+        System.out.println(length);
     }
 }
 
