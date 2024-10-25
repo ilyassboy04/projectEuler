@@ -11,6 +11,13 @@ public class Main {
         //PASSED oppgaver.oppgave9();
         //TODO:  oppgaver.oppgave10();
         //PASSED oppgaver.oppgave11();
-        oppgaver.oppgave14();
+        //TODO: oppgaver.oppgave14();
+
+
+        //PASSED (18)
+        //oppgaver.Node rot = oppgaver.lagBT();
+        //int maxSum = oppgaver.oppgave18(rot);
+        //System.out.println(maxSum);
+
     }
 }
