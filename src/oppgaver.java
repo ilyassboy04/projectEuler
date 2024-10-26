@@ -79,21 +79,20 @@ public class oppgaver {
     }
 
     public static void oppgave5() { //Smallest multible evenly divisble by 1-20
-        int number = 1;
-        int i = 2;
-        boolean solution = false;
-        while (!solution) {
-            for (i = 2; i <= 20; i++) {
-                for (int j = 2; j <= 20; j++) {
-                    if (number % j != 0) {
-                        number++;
-                    } else {
-                        solution = true;
-                    }
-                }
-            }
-            System.out.println(number);
+        long result = 1;
+        for (int i = 1; i <= 20; i++){
+            result = (result*i)/gcd((int)result, i);
         }
+
+        System.out.println(result);
+    }
+    private static int gcd(int a, int b){
+        while (b != 0){
+            int temp = b;
+            b = a%b;
+            a = temp;
+        }
+        return a;
     }
 
     public static void oppgave6() { // sum square difference (1+2...100)^2 vs (1^2 + ... 100^2)

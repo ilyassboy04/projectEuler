@@ -4,7 +4,7 @@ public class Main {
         //PASSED oppgaver.oppgave2();
         //PASSED oppgaver.oppgave3();
         //PASSED oppgaver.oppgave4();
-        //TODO:  oppgaver.oppgave5();
+        oppgaver.oppgave5();
         //PASSED oppgaver.oppgave6();
         //TODO:  oppgaver.oppgave7();
         //PASSED oppgaver.oppgave8();
