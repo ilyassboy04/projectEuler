@@ -222,6 +222,27 @@ public class oppgaver {
         System.out.println("Biggest LFD-diagonal: " + biggestLeft_Right_Down_Diagonal);
     }
 
+    public static void oppgave12() { // Highly divisible Triangular Number
+        int tall = 21;
+        int sum = 0;
+        int count = 0;
+       /*while (sum < 500){
+           tall +=1;
+           sum +=tall;
+           System.out.println(sum);
+        }
+        */
+        for (int i = tall; i >= 1; i--){
+            if(tall%i==0){
+                count++;
+            }
+        }
+
+        
+        System.out.println(count);
+
+    }
+
     public static void oppgave14(){ //Longest Collatz sequence (3n+1)
         int start = 13;
         int length = 1;
