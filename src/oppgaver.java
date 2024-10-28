@@ -223,7 +223,7 @@ public class oppgaver {
     }
 
     public static void oppgave12() { // Highly divisible Triangular Number
-        int tall = 21;
+        int tall = 28;
         int sum = 0;
         int count = 0;
        /*while (sum < 500){
@@ -234,11 +234,12 @@ public class oppgaver {
         */
         for (int i = tall; i >= 1; i--){
             if(tall%i==0){
+                System.out.println(i);
                 count++;
             }
         }
 
-        
+
         System.out.println(count);
 
     }
@@ -319,6 +320,16 @@ public class oppgaver {
 
 
         return maxSum;
+    }
+
+    public static void oppgave20(){
+        long faktorial = 1l;
+        //too long to handle- convert to string maybe?
+        for (int i = 1; i<101; i++){
+            faktorial = faktorial*i;
+            System.out.println(faktorial);
+        }
+        System.out.println(faktorial);
     }
 }
 
