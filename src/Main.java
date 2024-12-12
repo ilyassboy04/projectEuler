@@ -13,6 +13,7 @@ public class Main {
         //PASSED oppgaver.oppgave11();
         //TODO: oppgaver.oppgave12();
         //TODO: oppgaver.oppgave14();
+        oppgaver.oppgave15(40,20);
 
 
 
@@ -21,7 +22,7 @@ public class Main {
         //oppgaver.Node rot = oppgaver.lagBT();
         //int maxSum = oppgaver.oppgave18(rot);
         //System.out.println(maxSum);
-        oppgaver.oppgave20();
+        //oppgaver.oppgave20();
 
     }
 }

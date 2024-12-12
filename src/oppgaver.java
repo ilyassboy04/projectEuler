@@ -331,6 +331,17 @@ public class oppgaver {
         }
         System.out.println(faktorial);
     }
+
+    public static void oppgave15(int n, int k){ //lattice paths (biniomial formula)
+        if (k > n-k){
+            k= n-k;
+        }
+        long tall = 1;
+        for (int i = 0; i<k;i++){
+            tall = tall*(n-i) / (i+1);
+        }
+        System.out.println(tall);
+    }
 }
 
 
