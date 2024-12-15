@@ -244,20 +244,32 @@ public class oppgaver {
 
     }
 
-    public static void oppgave14(){ //Longest Collatz sequence (3n+1)
-        int tall = 13;
-        int antall = 1;
-        while (tall!= 1){
-            if(tall%2==0){
-                tall/=2;
-                antall++;
-            } else {
-                tall = (tall*3) + 1;
-                antall++;
+    public static void oppgave14() { //Longest Collatz sequence (3n+1)
+        int teller = 2;
+        int max = 0;
+        int maxIndeks = 0;
+        while (teller < 1_000_000) {
+            int antall = 1;
+            long tall = teller;
+
+            while (tall != 1) {
+                if (tall % 2 == 0) {
+                    tall /= 2;
+                    antall++;
+                } else {
+                    tall = (tall * 3) + 1;
+                    antall++;
+                }
             }
-            System.out.println(tall);
+            if(antall> max) {
+                max = antall;
+                maxIndeks = teller;
+            }
+            System.out.println(teller);
+            teller++;
         }
-        System.out.println("antallet er: "+antall);
+        System.out.println("lengste sekvensen er : "+ max +" og tilhører tallet: " + maxIndeks);
+
     }
     public static void oppgave15(int n, int k){ //lattice paths (biniomial formula)
         if (k > n-k){
