@@ -245,18 +245,29 @@ public class oppgaver {
     }
 
     public static void oppgave14(){ //Longest Collatz sequence (3n+1)
-        int start = 13;
-        int length = 1;
-        while (start!= 1){
-            if(start%2==0){
-                start/=2;
-            } else{
-                start = 3*start+1;
+        int tall = 13;
+        int antall = 1;
+        while (tall!= 1){
+            if(tall%2==0){
+                tall/=2;
+                antall++;
+            } else {
+                tall = (tall*3) + 1;
+                antall++;
             }
-            System.out.println(start);
-            length++;
+            System.out.println(tall);
         }
-        System.out.println("sequence contains this many terms: "+length);
+        System.out.println("antallet er: "+antall);
+    }
+    public static void oppgave15(int n, int k){ //lattice paths (biniomial formula)
+        if (k > n-k){
+            k= n-k;
+        }
+        long tall = 1;
+        for (int i = 0; i<k;i++){
+            tall = tall*(n-i) / (i+1);
+        }
+        System.out.println(tall);
     }
 
     static class Node{
@@ -332,16 +343,7 @@ public class oppgaver {
         System.out.println(faktorial);
     }
 
-    public static void oppgave15(int n, int k){ //lattice paths (biniomial formula)
-        if (k > n-k){
-            k= n-k;
-        }
-        long tall = 1;
-        for (int i = 0; i<k;i++){
-            tall = tall*(n-i) / (i+1);
-        }
-        System.out.println(tall);
-    }
+
 }
 
 

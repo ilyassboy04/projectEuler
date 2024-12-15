@@ -12,9 +12,8 @@ public class Main {
         //TODO:  oppgaver.oppgave10();
         //PASSED oppgaver.oppgave11();
         //TODO: oppgaver.oppgave12();
-        //TODO: oppgaver.oppgave14();
-        oppgaver.oppgave15(40,20);
-
+        oppgaver.oppgave14();
+        //PASSED oppgaver.oppgave15(40,20);
 
 
 
