@@ -250,25 +250,27 @@ public class oppgaver {
     }
 
     public static void oppgave12() { // Highly divisible Triangular Number
-        int tall = 28;
-        int sum = 0;
-        int count = 0;
-       /*while (sum < 500){
-           tall +=1;
-           sum +=tall;
-           System.out.println(sum);
-        }
-        */
-        for (int i = tall; i >= 1; i--){
-            if(tall%i==0){
-                System.out.println(i);
-                count++;
+        long triangularNumber = 0;
+        int teller = 1;
+        int divisorCount = 0;
+        boolean divisorTarget = true;
+        while (divisorTarget){
+            triangularNumber += teller;
+            teller++;
+            for(long i = triangularNumber; i>= 1; i--){
+                if(triangularNumber%i==0) {
+                    divisorCount++;
+                }
             }
+            if (divisorCount<=500){
+                divisorCount = 0;
+            } else {
+                divisorTarget = false;
+            }
+
         }
-
-
-        System.out.println(count);
-
+        System.out.println(divisorCount);
+        System.out.println(triangularNumber);
     }
 
     public static void oppgave14() { //Longest Collatz sequence (3n+1)

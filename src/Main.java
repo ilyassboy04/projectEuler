@@ -9,9 +9,9 @@ public class Main {
         //PASSED oppgaver.oppgave7();
         //PASSED oppgaver.oppgave8();
         //PASSED oppgaver.oppgave9();
-        oppgaver.oppgave10();
+        //PASSED oppgaver.oppgave10();
         //PASSED oppgaver.oppgave11();
-        //TODO: oppgaver.oppgave12();
+        oppgaver.oppgave12();
         //PASSEDoppgaver.oppgave14();
         //PASSED oppgaver.oppgave15(40,20);
 
