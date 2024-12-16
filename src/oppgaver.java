@@ -110,16 +110,25 @@ public class oppgaver {
     }
 
     public static void oppgave7() { //the 10_001th prime number
-        int[] tall = new int[10_001];
-        int indeks = 0;
-        tall[0] = 2;
-        tall[1] = 3;
-        for (int prime = 4; indeks < 10_001; prime++)
-            if (prime % tall[indeks] != 0) {
-                tall[indeks] = prime;
-                indeks++;
+        int primtallLimit = 10_001;
+        int primtallCount = 1; // 2 er allerede et primtall, men i utregningen vil ikke bli telt
+        int tall = 2;
+
+        while (primtallCount < primtallLimit){
+            tall++;
+            boolean erPrimtall = true;
+            for (int i = 2; i <= Math.sqrt(tall); i++){
+                if (tall%i==0){
+                    erPrimtall = false;
+                    break;
+                }
             }
-        System.out.println(tall[tall.length] - 1);
+            if (erPrimtall){
+                primtallCount++;
+            }
+        }
+
+        System.out.println("primtallnummer: " + primtallCount +" er: " + tall);
     }
 
     public static void oppgave8() { // largest product in a series
@@ -164,6 +173,24 @@ public class oppgaver {
     }
 
     public static void oppgave10() { //summation of primes below two million
+        long sumOfPrimes = 0;
+        int tall = 2;
+
+        while (tall<2_000_000){
+            boolean isPrime = true;
+
+            for(int i = 2; i<=Math.sqrt(tall); i++){
+                if(tall%i==0){
+                    isPrime = false;
+                    break;
+                }
+            }
+            if(isPrime){
+                sumOfPrimes+=tall;
+            }
+            tall++;
+        }
+        System.out.println(sumOfPrimes);
     }
 
     public static void oppgave11() { //Largest product in a grid

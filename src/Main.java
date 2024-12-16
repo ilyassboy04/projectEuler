@@ -6,13 +6,13 @@ public class Main {
         //PASSED oppgaver.oppgave4();
         //PASSED oppgaver.oppgave5();
         //PASSED oppgaver.oppgave6();
-        //TODO:  oppgaver.oppgave7();
+        //PASSED oppgaver.oppgave7();
         //PASSED oppgaver.oppgave8();
         //PASSED oppgaver.oppgave9();
-        //TODO:  oppgaver.oppgave10();
+        oppgaver.oppgave10();
         //PASSED oppgaver.oppgave11();
         //TODO: oppgaver.oppgave12();
-        oppgaver.oppgave14();
+        //PASSEDoppgaver.oppgave14();
         //PASSED oppgaver.oppgave15(40,20);
 
 
