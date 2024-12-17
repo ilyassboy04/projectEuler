@@ -251,26 +251,30 @@ public class oppgaver {
 
     public static void oppgave12() { // Highly divisible Triangular Number
         long triangularNumber = 0;
-        int teller = 1;
-        int divisorCount = 0;
-        boolean divisorTarget = true;
-        while (divisorTarget){
-            triangularNumber += teller;
-            teller++;
-            for(long i = triangularNumber; i>= 1; i--){
-                if(triangularNumber%i==0) {
-                    divisorCount++;
+        int n = 1; //triangle number index (formerly "teller")
+
+        while (true) {
+            triangularNumber += n; //neste triangulaer
+            n++;
+
+            int divisorCount = 0;
+            long sqrt = (long) Math.sqrt(triangularNumber);
+
+
+            for (long i = 1; i <= sqrt; i++) { //teller bare opp til roten og opddater divisorCount i par
+                if (triangularNumber % i == 0) {
+                    divisorCount += 2;
                 }
             }
-            if (divisorCount<=500){
-                divisorCount = 0;
-            } else {
-                divisorTarget = false;
+            if (sqrt * sqrt == triangularNumber) {
+                divisorCount--; //hvis det er et perfekt kvadrattal så fjerner vi dobbelt telling siden divisoren er samme
             }
-
+            if (divisorCount > 500) {
+                System.out.println(divisorCount);
+                System.out.println(triangularNumber);
+                break;
+            }
         }
-        System.out.println(divisorCount);
-        System.out.println(triangularNumber);
     }
 
     public static void oppgave14() { //Longest Collatz sequence (3n+1)
