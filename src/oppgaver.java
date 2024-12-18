@@ -1,5 +1,7 @@
 import org.w3c.dom.Node;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.*;
 
 public class oppgaver {
@@ -288,8 +290,19 @@ public class oppgaver {
             }
             input.append(line).append("\n");
         }
-        System.out.println(input);
         scanner.close();
+
+        String[] tall = input.toString().split("\n");
+        BigInteger sum =  BigInteger.ZERO;
+
+        for(String nummer : tall){
+            sum = sum.add(new BigInteger(nummer));
+        }
+
+        String sumString = sum.toString();
+        String firstTenDigits = sumString.substring(0,10);
+
+        System.out.println(firstTenDigits);
 
     }
 
