@@ -293,14 +293,14 @@ public class oppgaver {
         scanner.close();
 
         String[] tall = input.toString().split("\n");
-        BigInteger sum =  BigInteger.ZERO;
+        BigInteger sum =  BigInteger.ZERO; // . zero/one/two is how we initialize with BigInteger.
 
         for(String nummer : tall){
-            sum = sum.add(new BigInteger(nummer));
+            sum = sum.add(new BigInteger(nummer)); //adding the BigInteger together (new BigInt is the parsing from String)
         }
 
         String sumString = sum.toString();
-        String firstTenDigits = sumString.substring(0,10);
+        String firstTenDigits = sumString.substring(0,10); //from start and ten out.
 
         System.out.println(firstTenDigits);
 
