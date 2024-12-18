@@ -277,6 +277,22 @@ public class oppgaver {
         }
     }
 
+    public static void oppgave13() {
+        Scanner scanner = new Scanner(System.in);
+        StringBuilder input = new StringBuilder();
+
+        while(true){
+            String line = scanner.nextLine();
+            if(line.equals("END")){
+                break;
+            }
+            input.append(line).append("\n");
+        }
+        System.out.println(input);
+        scanner.close();
+
+    }
+
     public static void oppgave14() { //Longest Collatz sequence (3n+1)
         int teller = 2;
         int max = 0;

@@ -11,7 +11,8 @@ public class Main {
         //PASSED oppgaver.oppgave9();
         //PASSED oppgaver.oppgave10();
         //PASSED oppgaver.oppgave11();
-        oppgaver.oppgave12();
+        //PASSED oppgaver.oppgave12();
+        oppgaver.oppgave13();
         //PASSEDoppgaver.oppgave14();
         //PASSED oppgaver.oppgave15(40,20);
 
