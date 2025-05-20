@@ -408,8 +408,7 @@ public class oppgaver {
     }
 
     public static void oppgave19(){
-        //Solved with pen and paper by probabilty with ~2% margin.
-        //tester om github registrere denne
+        //Solved with pen and paper by probabilty with ~2% margin
     }
 
     public static void oppgave20(){
