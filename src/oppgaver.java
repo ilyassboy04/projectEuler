@@ -407,6 +407,10 @@ public class oppgaver {
         return maxSum;
     }
 
+    public static void oppgave19(){
+        //Solved with pen and paper by probabilty with ~2% margin.
+    }
+
     public static void oppgave20(){
         long faktorial = 1l;
         //too long to handle- convert to string maybe?
