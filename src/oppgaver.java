@@ -421,6 +421,13 @@ public class oppgaver {
         System.out.println(faktorial);
     }
 
+    public static void oppgave24(){
+        int antallPermutasjoner = 0;
+
+        for (int i = 0; i < 10; i++){
+        }
+    }
+
 
 }
 
